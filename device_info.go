@@ -90,8 +90,23 @@ func parseDeviceLong(line string) (*DeviceInfo, error) {
 	return newDevice(fields[0], state, attrs)
 }
 
+// samples of parameter fields passed in
+// [product:PRODUCT model:MODEL device:DEVICE] for emulators
+// [usb:1234 product:PRODUCT model:MODEL device:DEVICE] for physical device, adb usb
+// [2-1.1 product:PRODUCT model:MODEL device:DEVICE] for physical device, libusb
 func parseDeviceAttributes(fields []string) map[string]string {
 	attrs := map[string]string{}
+	if len(fields) == 0 {
+		return attrs
+	}
+	if !strings.HasPrefix(fields[0], "product:") {
+		usb := fields[0] // libusb's USB backend implementation
+		if strings.HasPrefix(usb, "usb:") {
+			usb = usb[4:] // ADB's USB backend implementation
+		}
+		attrs["usb"] = usb
+		fields = fields[1:]
+	}
 	for _, field := range fields {
 		key, val := parseKeyVal(field)
 		attrs[key] = val
