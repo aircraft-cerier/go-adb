@@ -1,7 +1,10 @@
 package adb
 
-import "github.com/matt-e/go-adb/internal/errors"
-import sysErrors "errors"
+import (
+	sysErrors "errors"
+
+	"github.com/aircraft-cerier/go-adb/internal/errors"
+)
 
 type ErrCode errors.ErrCode
 

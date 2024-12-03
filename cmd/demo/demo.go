@@ -8,8 +8,8 @@ import (
 	"log"
 	"time"
 
-	adb "github.com/matt-e/go-adb"
-	"github.com/matt-e/go-adb/internal/errors"
+	adb "github.com/aircraft-cerier/go-adb"
+	"github.com/aircraft-cerier/go-adb/internal/errors"
 )
 
 var (
@@ -68,8 +68,8 @@ func main() {
 		printErr(watcher.Err())
 	}
 
-	//fmt.Println("Killing server…")
-	//client.KillServer()
+	// fmt.Println("Killing server…")
+	// client.KillServer()
 }
 
 func printErr(err error) {

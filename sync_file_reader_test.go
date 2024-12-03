@@ -6,7 +6,7 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/matt-e/go-adb/wire"
+	"github.com/aircraft-cerier/go-adb/wire"
 	"github.com/stretchr/testify/assert"
 )
 
@@ -38,6 +38,7 @@ func TestReadNextChunk(t *testing.T) {
 	_, err = readNextChunk(s)
 	assert.Equal(t, io.EOF, err)
 }
+
 func TestReadNextChunkInvalidChunkId(t *testing.T) {
 	s := wire.NewSyncScanner(strings.NewReader(
 		"ATAD\006\000\000\000hello "))

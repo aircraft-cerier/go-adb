@@ -1,4 +1,4 @@
-module github.com/matt-e/go-adb
+module github.com/aircraft-cerier/go-adb
 
 go 1.21.6
 

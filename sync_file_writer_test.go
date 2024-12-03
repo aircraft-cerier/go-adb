@@ -2,13 +2,12 @@ package adb
 
 import (
 	"bytes"
+	"encoding/binary"
+	"strings"
 	"testing"
 	"time"
 
-	"encoding/binary"
-	"strings"
-
-	"github.com/matt-e/go-adb/wire"
+	"github.com/aircraft-cerier/go-adb/wire"
 	"github.com/stretchr/testify/assert"
 )
 

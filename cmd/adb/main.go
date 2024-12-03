@@ -8,9 +8,9 @@ import (
 	"syscall"
 	"time"
 
+	"github.com/aircraft-cerier/go-adb"
 	"github.com/alecthomas/kingpin"
 	"github.com/cheggaaa/pb"
-	"github.com/matt-e/go-adb"
 )
 
 const StdIoFilename = "-"
@@ -108,7 +108,7 @@ func parseDevice() adb.DeviceDescriptor {
 }
 
 func listDevices(long bool) int {
-	//client := adb.New(server)
+	// client := adb.New(server)
 	devices, err := client.ListDevices()
 	if err != nil {
 		fmt.Fprintln(os.Stderr, "error:", err)

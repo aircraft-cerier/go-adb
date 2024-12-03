@@ -4,7 +4,7 @@ import (
 	"bufio"
 	"strings"
 
-	"github.com/matt-e/go-adb/internal/errors"
+	"github.com/aircraft-cerier/go-adb/internal/errors"
 )
 
 type DeviceInfo struct {

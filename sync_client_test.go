@@ -7,8 +7,8 @@ import (
 	"testing"
 	"time"
 
-	"github.com/matt-e/go-adb/internal/errors"
-	"github.com/matt-e/go-adb/wire"
+	"github.com/aircraft-cerier/go-adb/internal/errors"
+	"github.com/aircraft-cerier/go-adb/wire"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 )

@@ -6,7 +6,7 @@ import (
 	"os"
 	"time"
 
-	"github.com/matt-e/go-adb/internal/errors"
+	"github.com/aircraft-cerier/go-adb/internal/errors"
 )
 
 type SyncScanner interface {
@@ -41,6 +41,7 @@ func (s *realSyncScanner) ReadInt32() (int32, error) {
 	value, err := readInt32(s.Reader)
 	return int32(value), errors.WrapErrorf(err, errors.NetworkError, "error reading int from sync scanner")
 }
+
 func (s *realSyncScanner) ReadFileMode() (os.FileMode, error) {
 	var value uint32
 	err := binary.Read(s.Reader, binary.LittleEndian, &value)
@@ -48,8 +49,8 @@ func (s *realSyncScanner) ReadFileMode() (os.FileMode, error) {
 		return 0, errors.WrapErrorf(err, errors.NetworkError, "error reading filemode from sync scanner")
 	}
 	return ParseFileModeFromAdb(value), nil
-
 }
+
 func (s *realSyncScanner) ReadTime() (time.Time, error) {
 	seconds, err := s.ReadInt32()
 	if err != nil {
@@ -75,6 +76,7 @@ func (s *realSyncScanner) ReadString() (string, error) {
 
 	return string(bytes), nil
 }
+
 func (s *realSyncScanner) ReadBytes() (io.Reader, error) {
 	length, err := s.ReadInt32()
 	if err != nil {

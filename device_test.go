@@ -3,9 +3,9 @@ package adb
 import (
 	"testing"
 
+	"github.com/aircraft-cerier/go-adb/internal/errors"
+	"github.com/aircraft-cerier/go-adb/wire"
 	"github.com/stretchr/testify/assert"
-	"github.com/matt-e/go-adb/internal/errors"
-	"github.com/matt-e/go-adb/wire"
 )
 
 func TestGetAttribute(t *testing.T) {
@@ -24,11 +24,11 @@ func TestGetAttribute(t *testing.T) {
 func TestGetDeviceInfo(t *testing.T) {
 	deviceLister := func() ([]*DeviceInfo, error) {
 		return []*DeviceInfo{
-			&DeviceInfo{
+			{
 				Serial:  "abc",
 				Product: "Foo",
 			},
-			&DeviceInfo{
+			{
 				Serial:  "def",
 				Product: "Bar",
 			},

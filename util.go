@@ -8,12 +8,10 @@ import (
 	"strconv"
 	"strings"
 
-	"github.com/matt-e/go-adb/internal/errors"
+	"github.com/aircraft-cerier/go-adb/internal/errors"
 )
 
-var (
-	whitespaceRegex = regexp.MustCompile(`^\s*$`)
-)
+var whitespaceRegex = regexp.MustCompile(`^\s*$`)
 
 func containsWhitespace(str string) bool {
 	return strings.ContainsAny(str, " \t\v")
