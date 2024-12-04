@@ -82,17 +82,13 @@ func parseDeviceLong(line string) (*DeviceInfo, error) {
 	}
 
 	if strings.Contains(line, "no permissions (user in plugdev group; are your udev rules wrong?)") {
-	} else {
+		state := StateUdevPermissions
+		return newDevice(fields[0], state, nil)
 	}
 
 	state, err := parseDeviceState(fields[1])
 	if err != nil {
-		if strings.Contains(line, "no permissions (user in plugdev group; are your udev rules wrong?)") {
-			state = StateUdevPermissions
-			return newDevice(fields[0], state, nil)
-		} else {
-			return nil, err
-		}
+		return nil, err
 	}
 
 	attrs := parseDeviceAttributes(fields[2:])
