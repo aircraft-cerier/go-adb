@@ -22,6 +22,7 @@ const (
 	StateDisconnected
 	StateOffline
 	StateOnline
+	StateUdevPermissions
 )
 
 var deviceStateStrings = map[string]DeviceState{
