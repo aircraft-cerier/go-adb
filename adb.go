@@ -3,8 +3,8 @@ package adb
 import (
 	"strconv"
 
-	"github.com/matt-e/go-adb/internal/errors"
-	"github.com/matt-e/go-adb/wire"
+	"github.com/aircraft-cerier/go-adb/internal/errors"
+	"github.com/aircraft-cerier/go-adb/wire"
 )
 
 /*

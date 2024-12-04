@@ -8,8 +8,8 @@ import (
 	"strings"
 	"time"
 
-	"github.com/matt-e/go-adb/internal/errors"
-	"github.com/matt-e/go-adb/wire"
+	"github.com/aircraft-cerier/go-adb/internal/errors"
+	"github.com/aircraft-cerier/go-adb/wire"
 )
 
 // MtimeOfClose should be passed to OpenWrite to set the file modification time to the time the Close
