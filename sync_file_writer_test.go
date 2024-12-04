@@ -7,7 +7,7 @@ import (
 	"testing"
 	"time"
 
-	"github.com/aircraft-cerier/go-adb/wire"
+	"github.com/matt-e/go-adb/wire"
 	"github.com/stretchr/testify/assert"
 )
 

@@ -1,9 +1,7 @@
 package adb
 
 import (
-	"fmt"
-
-	"github.com/aircraft-cerier/go-adb/internal/errors"
+	"github.com/matt-e/go-adb/internal/errors"
 )
 
 // DeviceState represents one of the 3 possible states adb will report devices.
@@ -35,7 +33,6 @@ var deviceStateStrings = map[string]DeviceState{
 func parseDeviceState(str string) (DeviceState, error) {
 	state, ok := deviceStateStrings[str]
 	if !ok {
-		fmt.Println(str)
 		return StateInvalid, errors.Errorf(errors.ParseError, "invalid device state: %q", state)
 	}
 	return state, nil

@@ -1,11 +1,10 @@
 package adb
 
 import (
-	"fmt"
 	"strconv"
 
-	"github.com/aircraft-cerier/go-adb/internal/errors"
-	"github.com/aircraft-cerier/go-adb/wire"
+	"github.com/matt-e/go-adb/internal/errors"
+	"github.com/matt-e/go-adb/wire"
 )
 
 /*
@@ -127,13 +126,11 @@ Corresponds to the command:
 func (c *Adb) ListDevices() ([]*DeviceInfo, error) {
 	resp, err := roundTripSingleResponse(c.server, "host:devices-l")
 	if err != nil {
-		fmt.Println(err)
 		return nil, wrapClientError(err, c, "ListDevices")
 	}
 
 	devices, err := parseDeviceList(string(resp), parseDeviceLong)
 	if err != nil {
-		fmt.Println(err)
 		return nil, wrapClientError(err, c, "ListDevices")
 	}
 	return devices, nil

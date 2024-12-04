@@ -7,8 +7,8 @@ import (
 	"testing"
 	"time"
 
-	"github.com/aircraft-cerier/go-adb/internal/errors"
-	"github.com/aircraft-cerier/go-adb/wire"
+	"github.com/matt-e/go-adb/internal/errors"
+	"github.com/matt-e/go-adb/wire"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 )
@@ -19,7 +19,7 @@ func TestStatValid(t *testing.T) {
 	var buf bytes.Buffer
 	conn := &wire.SyncConn{wire.NewSyncScanner(&buf), wire.NewSyncSender(&buf)}
 
-	var mode os.FileMode = 0777
+	var mode os.FileMode = 0o777
 
 	conn.SendOctetString("STAT")
 	conn.SendFileMode(mode)

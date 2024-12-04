@@ -1,6 +1,6 @@
 package wire
 
-import "github.com/aircraft-cerier/go-adb/internal/errors"
+import "github.com/matt-e/go-adb/internal/errors"
 
 const (
 	// The official implementation of adb imposes an undocumented 255-byte limit

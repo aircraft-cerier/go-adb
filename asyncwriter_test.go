@@ -3,14 +3,14 @@ package adb_test
 import (
 	"log"
 
-	adb "github.com/aircraft-cerier/go-adb"
+	adb "github.com/matt-e/go-adb"
 )
 
 func ExampleDevice_DoSyncLocalFile() {
 	adbc, _ := adb.New()
 	dev := adbc.Device(adb.AnyUsbDevice())
 
-	sync, err := dev.DoSyncLocalFile("/data/local/tmp/tmp.txt", "local.txt", 0644)
+	sync, err := dev.DoSyncLocalFile("/data/local/tmp/tmp.txt", "local.txt", 0o644)
 	if err != nil {
 		log.Fatal(err)
 	}

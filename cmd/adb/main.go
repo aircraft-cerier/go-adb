@@ -8,9 +8,9 @@ import (
 	"syscall"
 	"time"
 
-	"github.com/aircraft-cerier/go-adb"
 	"github.com/alecthomas/kingpin"
 	"github.com/cheggaaa/pb"
+	"github.com/matt-e/go-adb"
 )
 
 const StdIoFilename = "-"
@@ -233,7 +233,7 @@ func push(showProgress bool, localPath, remotePath string, device adb.DeviceDesc
 	if localPath == "" || localPath == StdIoFilename {
 		localFile = os.Stdin
 		// 0 size will hide the progress bar.
-		perms = os.FileMode(0660)
+		perms = os.FileMode(0o660)
 		mtime = adb.MtimeOfClose
 	} else {
 		var err error

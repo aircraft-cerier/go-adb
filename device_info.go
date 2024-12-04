@@ -2,10 +2,9 @@ package adb
 
 import (
 	"bufio"
-	"fmt"
 	"strings"
 
-	"github.com/aircraft-cerier/go-adb/internal/errors"
+	"github.com/matt-e/go-adb/internal/errors"
 )
 
 type DeviceInfo struct {
@@ -77,7 +76,6 @@ func parseDeviceShort(line string) (*DeviceInfo, error) {
 
 func parseDeviceLong(line string) (*DeviceInfo, error) {
 	fields := strings.Fields(line)
-	fmt.Println(fields)
 	if len(fields) < 2 {
 		return nil, errors.Errorf(errors.ParseError,
 			"malformed device line, expected at least 5 fields but found %d", len(fields))
