@@ -12,7 +12,7 @@ import (
 )
 
 var (
-	someTime = time.Date(2015, 04, 12, 20, 7, 51, 0, time.UTC)
+	someTime = time.Date(2015, 0o4, 12, 20, 7, 51, 0, time.UTC)
 	// The little-endian encoding of someTime.Unix()
 	someTimeEncoded = []byte{151, 208, 42, 85}
 )

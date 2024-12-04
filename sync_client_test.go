@@ -19,7 +19,7 @@ func TestStatValid(t *testing.T) {
 	var buf bytes.Buffer
 	conn := &wire.SyncConn{wire.NewSyncScanner(&buf), wire.NewSyncSender(&buf)}
 
-	var mode os.FileMode = 0777
+	var mode os.FileMode = 0o777
 
 	conn.SendOctetString("STAT")
 	conn.SendFileMode(mode)

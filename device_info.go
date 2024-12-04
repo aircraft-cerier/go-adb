@@ -81,6 +81,11 @@ func parseDeviceLong(line string) (*DeviceInfo, error) {
 			"malformed device line, expected at least 5 fields but found %d", len(fields))
 	}
 
+	if strings.Contains(line, "no permissions (user in plugdev group; are your udev rules wrong?)") {
+		state := StateUdevPermissions
+		return newDevice(fields[0], state, nil)
+	}
+
 	state, err := parseDeviceState(fields[1])
 	if err != nil {
 		return nil, err

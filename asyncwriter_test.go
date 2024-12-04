@@ -10,7 +10,7 @@ func ExampleDevice_DoSyncLocalFile() {
 	adbc, _ := adb.New()
 	dev := adbc.Device(adb.AnyUsbDevice())
 
-	sync, err := dev.DoSyncLocalFile("/data/local/tmp/tmp.txt", "local.txt", 0644)
+	sync, err := dev.DoSyncLocalFile("/data/local/tmp/tmp.txt", "local.txt", 0o644)
 	if err != nil {
 		log.Fatal(err)
 	}
